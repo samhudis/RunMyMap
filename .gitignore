@@ -25,3 +25,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+#TCP Port for database needs to be 5434 on my local machine and 5432 on Heroku
+/config/database.yml
