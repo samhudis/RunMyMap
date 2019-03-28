@@ -81,15 +81,15 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./frontend/entry.jsx");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./frontend/runmymap.jsx");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./frontend/entry.jsx":
-/*!****************************!*\
-  !*** ./frontend/entry.jsx ***!
-  \****************************/
+/***/ "./frontend/runmymap.jsx":
+/*!*******************************!*\
+  !*** ./frontend/runmymap.jsx ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
