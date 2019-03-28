@@ -18,6 +18,6 @@ class Api::SessionsController < ApplicaitonController
 
     def destroy
         logout
-        render :json
+        render {}
     end
 end
