@@ -1,4 +1,4 @@
-class Api::UsersController < ApplicationController
+class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
 
@@ -20,12 +20,10 @@ class Api::UsersController < ApplicationController
 
     def index
         @users = User.all
-        render :index
     end
 
     def show
         @user = User.find(parmas[:id])
-        render :show
     end
 
     def destroy
