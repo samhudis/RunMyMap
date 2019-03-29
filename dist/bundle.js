@@ -237,11 +237,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
+/* harmony import */ var _util_session_api_util_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util/session_api_util.js */ "./frontend/util/session_api_util.js");
+
 
 
 
 
 document.addEventListener('DOMContentLoaded', function () {
+  //TESTING ONLY//
+  window.login = _util_session_api_util_js__WEBPACK_IMPORTED_MODULE_4__["login"];
+  window.logout = _util_session_api_util_js__WEBPACK_IMPORTED_MODULE_4__["logout"];
+  window.signup = _util_session_api_util_js__WEBPACK_IMPORTED_MODULE_4__["signup"]; //TESTING ONLY//
+
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_2__["default"], {
     store: Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])()
   }), document.getElementById('root'));
@@ -274,6 +281,45 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/session_api_util.js":
+/*!*******************************************!*\
+  !*** ./frontend/util/session_api_util.js ***!
+  \*******************************************/
+/*! exports provided: signup, login, logout */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
+var signup = function signup(user) {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/users',
+    data: {
+      user: user
+    }
+  });
+};
+var login = function login(user) {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/session',
+    data: {
+      user: user
+    }
+  });
+};
+var logout = function logout() {
+  return $.ajax({
+    method: 'DELETE',
+    url: 'api/session'
+  });
+};
 
 /***/ }),
 
