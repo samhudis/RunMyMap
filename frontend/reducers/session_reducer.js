@@ -3,10 +3,9 @@ import { RECEIVE_CURRENT_USER, REMOVE_CURRENT_USER} from '../actions/session_act
 export default (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            debugger
-            return merge ({}, state, action.user);
+            return merge ({}, state, {id: action.user.id});
         case REMOVE_CURRENT_USER:
-            return {};
+            return merge({}, state, {id: null})
         default:
             return state;
     };

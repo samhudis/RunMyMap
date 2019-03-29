@@ -7,7 +7,6 @@ import { login, logout, signup } from './util/session_api_util.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   const store = configureStore();
-
   //TESTING ONLY//
   window.getState = store.getState;
   window.login = login;
