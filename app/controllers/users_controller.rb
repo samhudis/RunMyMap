@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
-
         if @post.save
             render :show
         else

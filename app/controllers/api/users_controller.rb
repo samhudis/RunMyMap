@@ -2,10 +2,10 @@ class Api::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
 
-        if @post.save
+        if @user.save
             render :show
         else
-            render json: @post.errors.full_messages, status: 422
+            render json: @user.errors.full_messages, status: 422
         end
     end
 
@@ -20,11 +20,11 @@ class Api::UsersController < ApplicationController
 
     def index
         @users = User.all
-        render :index
+        render json: @users
     end
 
     def show
-        @user = User.find(parmas[:id])
+        @user = User.find(params[:id])
         render :show
     end
 

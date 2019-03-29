@@ -14,13 +14,13 @@ class User < ApplicationRecord
 
     def is_password?(password)
         test_password = BCrypt::Password.new(self.password_digest)
-        test_password.is_password?(passwored)
+        test_password.is_password?(password)
     end
 
     def password=(password)
         @password = password
-        self.password = password
-        self.password_digest = BCyrpt::Password.create(password)
+        # self.password = @password
+        self.password_digest = BCrypt::Password.create(password)
     end
 
     def self.generate_session_token
@@ -36,3 +36,4 @@ class User < ApplicationRecord
         self.save!
         self.session_token
     end
+end
