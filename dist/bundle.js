@@ -244,7 +244,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  //TESTING ONLY//
+  debugger; //TESTING ONLY//
+
   window.login = _util_session_api_util_js__WEBPACK_IMPORTED_MODULE_4__["login"];
   window.logout = _util_session_api_util_js__WEBPACK_IMPORTED_MODULE_4__["logout"];
   window.signup = _util_session_api_util_js__WEBPACK_IMPORTED_MODULE_4__["signup"]; //TESTING ONLY//

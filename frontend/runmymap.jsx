@@ -6,14 +6,16 @@ import configureStore from './store/store';
 import { login, logout, signup } from './util/session_api_util.js'
 
 document.addEventListener('DOMContentLoaded', () => {
+  const store = configureStore();
 
-    //TESTING ONLY//
-    window.login = login
-    window.logout = logout
-    window.signup = signup
-    //TESTING ONLY//
-
-
-  ReactDOM.render(<Root store={configureStore()}/>,
-  document.getElementById('root'));  
+  //TESTING ONLY//
+  window.getState = store.getState;
+  window.login = login;
+  window.logout = logout;
+  window.signup = signup;
+  //TESTING ONLY//
+  const root = document.getElementById('root');
+  
+  
+  ReactDOM.render(<Root store={store}/>, root);
 });
