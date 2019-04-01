@@ -1,4 +1,5 @@
 import { RECEIVE_CURRENT_USER, REMOVE_CURRENT_USER} from '../actions/session_actions';
+import merge from 'lodash/merge';
 
 export default (state = {}, action) => {
     switch (action.type) {
