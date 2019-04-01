@@ -1,12 +1,13 @@
 import React from 'react';
 import merge from 'lodash/merge';
 
-class SessionForm extends React.Component {
+class UserForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            email: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -39,18 +40,26 @@ class SessionForm extends React.Component {
 
     render() {
         return (
-            <div className="login-form-container">
-                <form onSubmit={this.handleSubmit} className="login-form-box">
+            <div className="signup-form-container">
+                <form onSubmit={this.handleSubmit} className="signup-form-box">
                 Run My map
                 <br/>
                 Please {this.props.formType} or {this.props.navLink}
                 {this.renderErrors()}
-                <div className="login-form">
+                <div className="signup-form">
                     <br/>
                     <label>Username:
                         <input type="text"
                             value={this.state.username}
                             onChange={this.update('username')}
+                            className='login-input'
+                        />
+                    </label>
+                    <br/>
+                    <label>Email Address:
+                        <input type="text"
+                            value={this.state.email}
+                            onChange={this.update('email')}
                             className='login-input'
                         />
                     </label>
@@ -71,4 +80,4 @@ class SessionForm extends React.Component {
     }
 }
 
-export default SessionForm;
+export default UserForm;

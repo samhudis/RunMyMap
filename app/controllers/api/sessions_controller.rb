@@ -9,6 +9,7 @@ class Api::SessionsController < ApplicationController
             login(user)
             render json: user
         else
+            debugger
             render json: ["Invalid username or password"], status: 401
         end
     end
