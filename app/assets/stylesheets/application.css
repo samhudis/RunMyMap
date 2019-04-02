@@ -14,10 +14,6 @@
  *= require_self
  */
 
-*{
-/* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
-/* color: lightgray */
-}
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -85,7 +81,7 @@ footer {
      justify-content: center;
  }
 
- .login-form-box .signup-form-box {
+ .auth-form-box {
      width: 20%;
      align-self: center;
      justify-self: center;
@@ -99,7 +95,7 @@ footer {
 .login-signup {
     display: flex;
     justify-content: space-evenly;
-    width: 10%
+    width: 11%
 }
 
 
@@ -119,4 +115,37 @@ footer {
 
  a {
      text-decoration: none
+ }
+ 
+ .login-signup-buttons {
+     padding: 0.75em 0.75em;
+     border-radius: 5px
+ }
+
+ .login-button {
+     color: black;
+     background-color: white
+ }
+
+ .signup-button {
+    color: white;
+    background-color: #1ddd7c
+ }
+
+ .signup-button:hover {
+     background-color: #149a56
+ }
+
+
+ .login-button:hover {
+     background-color: #ebebeb
+ }
+
+ .auth-alt {
+     justify-self: right
+ }
+
+ .auth-form-box {
+     height: 100px;
+     display: flex
  }

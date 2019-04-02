@@ -38,8 +38,8 @@ class UserForm extends React.Component {
     render() {
         return (
             <div className="signup-form-container">
-                <form onSubmit={this.handleSubmit} className="signup-form-box">
-                Please {this.props.formType} or {this.props.navLink}
+                <form onSubmit={this.handleSubmit} className="auth-form-box">
+                {this.props.navLink}
                 {this.renderErrors()}
                 <div className="signup-form">
                     <br/>

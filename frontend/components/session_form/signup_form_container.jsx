@@ -5,7 +5,7 @@ import { signup }from '../../actions/session_actions';
 import UserForm from './user_form';
 
 const msp = ({ errors }) => {
-    return {errors: errors.session, formType: 'signup', navLink: <Link to="/login">log in instead</Link>};
+    return {errors: errors.session, formType: 'signup', navLink: <Link to="/login" className="auth-alt">LOG IN</Link>};
 };
 
 const mdp = dispatch => {
