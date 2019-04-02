@@ -12,6 +12,14 @@ class UserForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        $('body').addClass('greyBackground')
+    }
+
+    componentWillUnmount() {
+        $('body').removeClass('greyBackground')
+    }
+
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -37,7 +45,7 @@ class UserForm extends React.Component {
 
     render() {
         return (
-            <div className="signup-form-container">
+            <div className="auth-form-container">
                 <form onSubmit={this.handleSubmit} className="auth-form-box">
                 {this.props.navLink}
                 {this.renderErrors()}

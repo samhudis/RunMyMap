@@ -4,6 +4,8 @@ import GreetingContainer from './greeting/greeting_container'
 import LoginFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util'
+import Background from './background/background'
+import Footer from './footer/footer'
 
 
 const App = () => {
@@ -27,14 +29,9 @@ const App = () => {
                 <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             </ Switch>
             </div>
+            <Route exact path="/" component={Background} />
         </div>
-        <div className="bkgnd">
-            <img src='https://mapmy.uastatic.com/0b83673ac3015b5a0ec7e47944c4b108.png'/>
-            <img src='https://mapmy.uastatic.com/9b2217b59621acf4f24bfd26d9c2c3ca.png'/>
-            <img src='https://mapmy.uastatic.com/6c78b5381fab073aa188650c3b1a4193.jpg'/>
-        </div>
-        <footer>
-        </footer>
+        <Route exact path="/" component={Footer} />
     </div>
     );
 }
