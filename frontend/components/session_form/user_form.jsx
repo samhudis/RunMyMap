@@ -25,18 +25,15 @@ class UserForm extends React.Component {
     }
 
     renderErrors() {
-            if (this.props.errors.session) {
                 return(
                     <ul>
                         {this.props.errors.map((error, i) =>
                             <li key={`error-${i}`}>
                             { error }
                             </li>)}
-                        ))}
                     </ul>
                 );
             }
-        }
 
     render() {
         return (
