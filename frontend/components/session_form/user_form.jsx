@@ -26,7 +26,7 @@ class UserForm extends React.Component {
 
     renderErrors() {
                 return(
-                    <ul>
+                    <ul className="errors">
                         {this.props.errors.map((error, i) =>
                             <li key={`error-${i}`}>
                             { error }
@@ -39,8 +39,6 @@ class UserForm extends React.Component {
         return (
             <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
-                Run My map
-                <br/>
                 Please {this.props.formType} or {this.props.navLink}
                 {this.renderErrors()}
                 <div className="signup-form">
