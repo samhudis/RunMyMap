@@ -14,6 +14,11 @@
  *= require_self
  */
 
+*{
+/* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+/* color: lightgray */
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
@@ -27,21 +32,31 @@ div {
 }
 
 header {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: lightgray;
      display: flex;
-     background-color: lightblue;
+     background-color: white;
      position: relative;
-     font-family: Arial, Helvetica, sans-serif;
+     text-transform: uppercase;
      font-weight: 500;
      font-size: 14px;
-     box-sizing: border-box;
-     border-style: solid grey;
+     border-bottom: solid lightgrey 1px;
      justify-content: space-evenly;
      align-items: center;
      /* align-content: center; */
      height: 65px;
-     flex-direction: row
+     flex-direction: row;
+     padding: 0 15% 0 15%
 
  }
+
+header > .main-nav {
+    width: 50%;
+    display: flex;
+    justify-self: center;
+    justify-items: space-around;
+    justify-content: space-around
+}
 
 footer {
     background-image: url(https://mapmy.uastatic.com/1fb53630c0234d4396417e96ffc2ec85.png);
@@ -78,6 +93,30 @@ footer {
  }
 
  .login-form .signup-form {
-    justify-self: center;
     width: 20%
+ }
+
+.login-signup {
+    display: flex;
+    justify-content: space-evenly;
+    width: 10%
+}
+
+
+ nav > a > img {
+     position: relative;
+     height: 21px;
+     width: 163.8px
+ }
+
+ .main-nav > a {
+     color: grey
+ }
+
+ .main-nav > a:hover {
+     color: black;
+ }
+
+ a {
+     text-decoration: none
  }
