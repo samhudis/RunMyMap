@@ -45,6 +45,7 @@ class SessionForm extends React.Component {
 
     render() {
         return (
+            <div className ="auth-form">
             <div className="auth-form-container">
                 <form onSubmit={this.handleSubmit} className="auth-form-box">
                 {this.props.navLink}
@@ -75,6 +76,7 @@ class SessionForm extends React.Component {
                     <input className="submit-button" type="submit" value={this.props.formType} />
                 </div>
             </form>
+        </div>
         </div>
         );
     }
