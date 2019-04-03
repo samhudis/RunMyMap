@@ -14,9 +14,12 @@
  *= require_self
  */
 
+ *{
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+ }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     margin: 0 0 0 0;
     width: 100%;
     height: 100%;
@@ -78,6 +81,7 @@ footer {
      justify-items: center;
      justify-content: center;
      flex-direction: column;
+     width: 20%
  }
 
  .auth-form-box {
@@ -89,6 +93,13 @@ footer {
 
  }
 
+ .auth-form-box > ul {
+    color: #DC001C;
+    font-size: 12px;
+    list-style: none;
+    padding-left: 0
+ }
+
  .auth-alt {
      width: 100%;
      justify-self: right;
@@ -98,8 +109,13 @@ footer {
 
  }
 
+ .auth-alt:hover {
+     color: black
+ }
+
  .login-form .signup-form {
-    width: 20%
+    width: 20%;
+    color: lightgray
  }
 
 .login-signup {
@@ -162,4 +178,76 @@ footer {
      background-color: #F0F0F0;
      background-image: linear-gradient(to bottom, #F0F0F0 0%, #FAFAFA 50%, #F0F0F0 100%);
     background-size: 100%
+ }
+
+ .or-span {
+     margin: 5% 0 0 0;
+     color: gray;
+     text-transform: uppercase;
+     font-size: 8pt;
+     display: inline-flex;
+     flex-direction: row;
+     align-items: center;
+     width: 100%
+     /* justify-content: space-between */
+ }
+
+ .or-span-bar {
+     width: 100%;
+     height: 1px;
+     background-color: grey;
+     margin: 2%
+ }
+
+ .submit-button {
+     color: white;
+     margin-top: 5%;
+     margin-bottom: 5%;
+     background-color: #1ddd7c;
+     height: 40px;
+     text-transform: uppercase;
+     border: none;
+     border-radius: 2px
+ }
+
+ .submit-button:hover {
+     background-color: #149a56
+ }
+
+ label {
+     color: gray
+ }
+
+ .auth-form-box > div > label > input{
+     background-color: white;
+     width: 95%;
+     border: solid lightgrey 1px;
+     margin-top: 2%;
+     /* padding: 2.5% 2.5 2.5% 0; */
+     padding: 2.5%
+ }
+
+ .header-group {
+     display: inline-flex;
+     justify-items: space-between;
+ }
+
+ .header-name {
+     color: black;
+     font-family: Arial, Helvetica, sans-serif;
+     text-transform: capitalize
+ }
+
+ .header-button {
+     color: grey;
+     text-transform: capitalize;
+     padding-left: 15%;
+     padding-right: 15%;
+     margin: 5%;
+     background-color: white;
+     border: solid lightgray 1px;
+ }
+
+ .header-button:hover {
+     color: black
  }
