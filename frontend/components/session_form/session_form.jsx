@@ -17,6 +17,7 @@ class SessionForm extends React.Component {
 
     componentWillUnmount() {
         $('body').removeClass('greyBackground')
+        this.props.clearErrors()
     }
 
     update(field) {

@@ -18,6 +18,7 @@ class UserForm extends React.Component {
 
     componentWillUnmount() {
         $('body').removeClass('greyBackground')
+        this.props.clearErrors()
     }
 
     update(field) {
