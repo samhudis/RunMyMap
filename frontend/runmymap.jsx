@@ -4,7 +4,8 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 import { login, logout, signup } from './util/session_api_util.js'
-import { fetchRoutes } from './util/route_api_util.js'
+// import { fetchRoutes } from './util/route_api_util.js'
+import { fetchRoutes } from './actions/route_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -30,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.signup = signup;
   //TESTING ONLY//
   const root = document.getElementById('root');
-  
   
   ReactDOM.render(<Root store={store}/>, root);
 });

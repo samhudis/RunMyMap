@@ -10,7 +10,7 @@ class Api::RoutesController < ApplicationController
 
     def index
         @routes = Route.all
-        render json: @routes
+        render :index
     end
 
     def show

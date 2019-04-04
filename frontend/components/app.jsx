@@ -3,7 +3,8 @@ import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container'
 import LoginFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
-import RoutesContainer from './routes/routes_container';
+import RouteIndexContainer from './routes/route_index_container';
+import RoutesBackgroundContainer from './routes_background/routes_background_container'
 import { AuthRoute, ProtectedRoute } from '../util/route_util'
 import Background from './background/background'
 import Footer from './footer/footer'
@@ -27,8 +28,9 @@ const App = () => {
             <Switch>
                 <AuthRoute exact path="/login" component={LoginFormContainer} />
                 <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-                {/* <ProtectedRoute exact path="/routes" component={RoutesContainer} /> */}
+                <Route exact path="/routes" component={RouteIndexContainer} />
             </ Switch>
+            <Route path ="/routes" component={RoutesBackgroundContainer} />
             <Route exact path="/" component={Background} />
         </div>
         <Route exact path="/" component={Footer} />

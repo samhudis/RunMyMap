@@ -1,23 +1,23 @@
 import * as RouteApiUtil from '../util/route_api_util';
 
 
-export const RECEIVE_ALL_ROUTES = "RECEIVE_ROUTE_USER";
+export const RECEIVE_ALL_ROUTES = "RECEIVE_ALL_ROUTES";
 export const RECEIVE_ROUTE = "RECEIVE_ROUTE"
 export const RECEIVE_ROUTE_ERRORS = "RECEIVE_ROUTE_ERRORS";
 
-export const receiveErrors = errors => {
+const receiveErrors = errors => {
     return {type: RECEIVE_ROUTE_ERRORS, errors}}
 
-export const receiveRoute = route => {
-    return {type: RECEIVE_ROUTES, route: route}}
+const receiveRoute = route => {
+    return {type: RECEIVE_ROUTES, route}}
 
-export const receiveAllRoutes = routes => {
-    return {type: RECEIVE_ALL_ROUTES, routes: routes}}
+const receiveAllRoutes = routes => {
+    return {type: RECEIVE_ALL_ROUTES, routes}}
 
-export const fetchRoutes = routes => { 
+export const fetchRoutes = () => {
     return dispatch => {
-        return (SessionApiUtil.fetchRoutes().then( () => {
-            dispatch(receiveCurrentUser(routes))},
+        return (RouteApiUtil.fetchRoutes().then( routes => {
+            dispatch(receiveAllRoutes(routes))},
             error => dispatch(receiveErrors(error.responseJSON))
     ))};
 };
