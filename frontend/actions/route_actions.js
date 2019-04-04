@@ -6,14 +6,17 @@ export const RECEIVE_ROUTE = "RECEIVE_ROUTE"
 export const RECEIVE_ROUTE_ERRORS = "RECEIVE_ROUTE_ERRORS";
 export const SEND_ROUTE = "SEND_ROUTE";
 
-const receiveErrors = errors => {
+export const receiveErrors = errors => {
     return {type: RECEIVE_ROUTE_ERRORS, errors}}
 
-const receiveRoute = route => {
-    return {type: RECEIVE_ROUTES, route}}
+export const receiveRoute = route => {
+    return {type: RECEIVE_ROUTE, route}}
 
-const receiveAllRoutes = routes => {
+export const receiveAllRoutes = routes => {
     return {type: RECEIVE_ALL_ROUTES, routes}}
+
+export const clearErrors = () => {
+    return {type: CLEAR_ERRORS}}
 
 // const sendRoute = route => {
 //     return {type: SEND_ROUTE, route}
@@ -35,13 +38,15 @@ export const fetchRoute = route => {
         ))};
 }
 
-export const createRoute = route => {
+export const createRoute = (route, props) => {
     return dispatch => {
         return (RouteApiUtil.createRoute(route).then ( route => {
             dispatch(receiveRoute(route))},
             error => dispatch(receiveErrors(error.responseJSON))
-        ))};
-}
+            ).then(props.history.push(`/routes/index`)
+        ))}
+        }
+
 
 // export const logout = () => { 
 //     return dispatch => {

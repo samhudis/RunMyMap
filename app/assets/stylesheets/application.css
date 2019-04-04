@@ -303,3 +303,8 @@ footer {
  .routes-page-link:hover {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), linear-gradient(257deg, #17d3ff, #18c0f3 20%, #17aee7 40%, #139bdb 60%, #0c8acf 80%, #0078c3);
  }
+
+ #map-container {
+     width: 100%;
+     height: 100%;
+ }
