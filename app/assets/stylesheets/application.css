@@ -49,6 +49,7 @@ header {
     justify-content: space-evenly;
     align-items: center;
     /* align-content: center; */
+    /* height: 50%; */
     height: 65px;
     flex-direction: row;
     padding: 0 15% 0 15%
@@ -87,7 +88,8 @@ footer {
      justify-items: center;
      justify-content: center;
      flex-direction: column;
-     width: 20%
+     width: 20%;
+     min-width: 150px;
  }
 
  .auth-form-box {
@@ -151,7 +153,9 @@ footer {
  
  .login-signup-buttons {
      padding: 0.75em 0.75em;
-     border-radius: 5px
+     /* padding: 5% 5%; */
+     border-radius: 5px;
+     min-width: 60px
  }
 
  .login-button {
@@ -260,7 +264,12 @@ footer {
 
  .bkgnd {
      /* position: absolute; */
-     z-index: -1
+     z-index: -1;
+ }
+
+ .bkgnd > img {
+     max-width: 100%;
+     height: auto
  }
 
  .all-routes {
@@ -290,4 +299,8 @@ footer {
     text-transform: uppercase;
     text-align: center;
     background-image:  linear-gradient(258deg, #17d3ff, #18c0f3 20%, #17aee7 40%, #139bdb 60%, #0c8acf 80%, #0078c3);
+ }
+
+ .routes-page-link:hover {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), linear-gradient(257deg, #17d3ff, #18c0f3 20%, #17aee7 40%, #139bdb 60%, #0c8acf 80%, #0078c3);
  }
