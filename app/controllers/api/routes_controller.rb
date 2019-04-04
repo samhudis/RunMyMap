@@ -18,9 +18,9 @@ class Api::RoutesController < ApplicationController
         render :show
     end
 
-
     private
     def route_params
         params.require(:route).permit(:name, :polyline, :user_id)
+        # debugger
     end
 end

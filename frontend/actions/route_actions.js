@@ -4,6 +4,7 @@ import * as RouteApiUtil from '../util/route_api_util';
 export const RECEIVE_ALL_ROUTES = "RECEIVE_ALL_ROUTES";
 export const RECEIVE_ROUTE = "RECEIVE_ROUTE"
 export const RECEIVE_ROUTE_ERRORS = "RECEIVE_ROUTE_ERRORS";
+export const SEND_ROUTE = "SEND_ROUTE";
 
 const receiveErrors = errors => {
     return {type: RECEIVE_ROUTE_ERRORS, errors}}
@@ -14,6 +15,10 @@ const receiveRoute = route => {
 const receiveAllRoutes = routes => {
     return {type: RECEIVE_ALL_ROUTES, routes}}
 
+// const sendRoute = route => {
+//     return {type: SEND_ROUTE, route}
+// }
+
 export const fetchRoutes = () => {
     return dispatch => {
         return (RouteApiUtil.fetchRoutes().then( routes => {
@@ -21,6 +26,22 @@ export const fetchRoutes = () => {
             error => dispatch(receiveErrors(error.responseJSON))
     ))};
 };
+
+export const fetchRoute = route => {
+    return dispatch => {
+        return (RouteApiUtil.fetchRoute(route).then ( route => {
+            dispatch(receiveRoute(route))},
+            error => dispatch(receiveErrors(error.responseJSON))
+        ))};
+}
+
+export const createRoute = route => {
+    return dispatch => {
+        return (RouteApiUtil.createRoute(route).then ( route => {
+            dispatch(receiveRoute(route))},
+            error => dispatch(receiveErrors(error.responseJSON))
+        ))};
+}
 
 // export const logout = () => { 
 //     return dispatch => {

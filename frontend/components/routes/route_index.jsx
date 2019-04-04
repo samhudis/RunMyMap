@@ -8,7 +8,7 @@ class RouteIndex extends React.Component {
 
     render() {
         const routes = Object.values(this.props.routes).map(route => 
-        <RouteIndexItem route = {route}/>)
+        <RouteIndexItem route = {route} key={route.id}/>)
 
         return(
             <div className="all-routes">

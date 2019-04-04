@@ -109,8 +109,7 @@ footer {
  }
 
  .auth-alt {
-     width: 100%;
-     justify-self: right;
+     align-self: flex-end;
      display: flex;
      justify-content: right;
      color: gray

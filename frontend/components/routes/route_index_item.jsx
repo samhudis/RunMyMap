@@ -1,10 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const RouteIndexItem = ({route}) => {
     return (
         <li>
-            {route.name}
-            {route.user_id}
+            <Link to={`/routes/${route.id}`}> {route.name} </Link>
         </li>);
     };
 

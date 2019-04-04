@@ -4,8 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 import { login, logout, signup } from './util/session_api_util.js'
-// import { fetchRoutes } from './util/route_api_util.js'
-import { fetchRoutes } from './actions/route_actions'
+import { fetchRoutes,  fetchRoute, createRoute } from './util/route_api_util.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -24,11 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   //TESTING ONLY//
   window.fetchRoutes = fetchRoutes;
+  window.fetchRoute = fetchRoute;
+  window.createRoute = createRoute;
   window.store = store;
   window.getState = store.getState;
   window.login = login;
   window.logout = logout;
   window.signup = signup;
+  window.create
   //TESTING ONLY//
   const root = document.getElementById('root');
   
