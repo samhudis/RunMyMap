@@ -4,6 +4,8 @@ import GreetingContainer from './greeting/greeting_container'
 import LoginFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import RouteIndexContainer from './routes/route_index_container';
+import RouteShowContainer from './routes/route_show_container';
+import SearchContainer from './search/search_container';
 import RouteCreateContainer from './routes/route_create_container';
 import RoutesBackgroundContainer from './routes_background/routes_background_container'
 import { AuthRoute, ProtectedRoute } from '../util/route_util'
@@ -29,8 +31,10 @@ const App = () => {
             <Switch>
                 <AuthRoute exact path="/login" component={LoginFormContainer} />
                 <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-                <ProtectedRoute exact path="/routes/index" component={RouteIndexContainer} />
+                {/* <ProtectedRoute exact path="/routes/index" component={RouteIndexContainer} /> */}
+                <ProtectedRoute exact path="/routes/index" component={SearchContainer} />
                 <ProtectedRoute exact path="/routes/create" component={RouteCreateContainer} />
+                <ProtectedRoute path = "/routes/:routeId" component={RouteShowContainer} />
             </ Switch>
             <Route exact path ="/routes" component={RoutesBackgroundContainer} />
             <Route exact path="/" component={Background} />

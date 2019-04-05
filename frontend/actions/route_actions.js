@@ -10,6 +10,7 @@ export const receiveErrors = errors => {
     return {type: RECEIVE_ROUTE_ERRORS, errors}}
 
 export const receiveRoute = route => {
+    debugger
     return {type: RECEIVE_ROUTE, route}}
 
 export const receiveAllRoutes = routes => {
@@ -31,8 +32,10 @@ export const fetchRoutes = () => {
 };
 
 export const fetchRoute = route => {
+    debugger
     return dispatch => {
         return (RouteApiUtil.fetchRoute(route).then ( route => {
+            debugger
             dispatch(receiveRoute(route))},
             error => dispatch(receiveErrors(error.responseJSON))
         ))};

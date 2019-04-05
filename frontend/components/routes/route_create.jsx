@@ -1,5 +1,6 @@
 import React from 'react';
 import merge from 'lodash/merge';
+import RouteMap from '../route_map/route_map';
 
 class RouteCreate extends React.Component {
     constructor(props) {
@@ -51,6 +52,7 @@ class RouteCreate extends React.Component {
                             className='routes-input'
                         />
                     </label>
+                    <RouteMap />
                     <br/>
                     <input className="submit-button" type="submit" value={this.props.formType} />
                 </div>

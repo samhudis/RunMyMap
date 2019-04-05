@@ -7,9 +7,11 @@ class Search extends React.Component {
     render () {
         return(
             <div id='map-container' ref='map'>
-            <BenchMap />
-            <BenchIndex />
+            <RouteMap />
+            <RouteIndex />
             </div>
         )
     }
 }
+
+export default Search;

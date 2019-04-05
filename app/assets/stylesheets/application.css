@@ -271,10 +271,6 @@ footer {
      height: auto
  }
 
- .all-routes {
-     position: absolute;
- }
-
  .routes-links {
      margin-top: 700px;
      width: 55%;
@@ -305,6 +301,12 @@ footer {
  }
 
  #map-container {
+     margin-top: 2em;
      width: 100%;
-     height: 100%;
+     height: 75em;
+ }
+
+ .routes-create-form {
+     margin-top: 2em;
+     height: 50em;
  }
