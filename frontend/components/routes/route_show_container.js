@@ -3,7 +3,6 @@ import { fetchRoute } from '../../actions/route_actions'
 import { connect } from 'react-redux';
 
 const msp = (state, ownProps) => {
-    debugger
     return {route: state.entities.routes[ownProps.match.params.routeId]}
 }
 

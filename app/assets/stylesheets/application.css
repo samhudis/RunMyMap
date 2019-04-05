@@ -301,12 +301,19 @@ footer {
  }
 
  #map-container {
-     margin-top: 2em;
+     margin-top: 1em;
      width: 100%;
-     height: 75em;
+     height: 40em;
  }
 
- .routes-create-form {
-     margin-top: 2em;
+ .routes-create-form .route-show {
      height: 50em;
+ }
+
+ .route-show {
+     margin-top: 3em;
+ }
+
+ .routes-form{
+     margin-top: 2em;
  }
