@@ -53,6 +53,7 @@ class RouteCreate extends React.Component {
                         />
                     </label>
                     <RouteMap />
+                    <input type="hidden" value = {this.state.polyline} onChange={this.update('polyline')} />
                     <br/>
                     <input className="submit-button" type="submit" value={this.props.formType} />
                 </div>
