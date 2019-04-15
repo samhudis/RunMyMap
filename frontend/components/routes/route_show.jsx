@@ -1,5 +1,5 @@
 import React from 'react';
-import RouteMap from '../route_map/route_map';
+import RouteMap from '../route_map/route_map_container';
 
 class RouteShow extends React.Component {
 
@@ -18,6 +18,8 @@ class RouteShow extends React.Component {
         return(
             <div className="route-show">
                 { route.name }
+                {/* <br />
+                { route.polyline } */}
                 <RouteMap />
             </div>
         )
