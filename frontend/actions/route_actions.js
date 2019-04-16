@@ -5,6 +5,7 @@ export const RECEIVE_ALL_ROUTES = "RECEIVE_ALL_ROUTES";
 export const RECEIVE_ROUTE = "RECEIVE_ROUTE"
 export const RECEIVE_ROUTE_ERRORS = "RECEIVE_ROUTE_ERRORS";
 export const SEND_ROUTE = "SEND_ROUTE";
+export const SEND_POLYLINE = "SEND_POLYLINE";
 
 export const receiveErrors = errors => {
     return {type: RECEIVE_ROUTE_ERRORS, errors}}
@@ -14,6 +15,9 @@ export const receiveRoute = route => {
 
 export const receiveAllRoutes = routes => {
     return {type: RECEIVE_ALL_ROUTES, routes}}
+
+export const sendPolyline = polyline => {
+    return {type: SEND_POLYLINE, polyline}}
 
 export const clearErrors = () => {
     return {type: CLEAR_ERRORS}}
@@ -46,18 +50,3 @@ export const createRoute = (route, props) => {
             ).then(props.history.push(`/routes/index`)
         ))}
         }
-
-
-// export const logout = () => { 
-//     return dispatch => {
-//         return (SessionApiUtil.logout().then( () => {
-//             dispatch(logoutCurrentUser())},
-//             error => dispatch(receiveErrors(error.responseJSON))
-//     ))};
-// };
-
-// export const signup = user => {
-//     return dispatch => {
-//         return (SessionApiUtil.signup(user).then(user => {
-//             dispatch(receiveCurrentUser(user))},
-//             error => dispatch(receiveErrors(error.responseJSON))))}}

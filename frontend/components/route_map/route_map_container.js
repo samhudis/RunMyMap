@@ -1,5 +1,5 @@
 import routeMap from './route_map';
-import { fetchRoutes } from '../../actions/route_actions'
+import { fetchRoutes, sendPolyline } from '../../actions/route_actions'
 import { connect } from 'react-redux';
 
 const msp = state => {
@@ -7,7 +7,8 @@ const msp = state => {
 }
 
 const mdp = dispatch => ({
-    fetchRoutes: () => dispatch(fetchRoutes())
+    fetchRoutes: () => dispatch(fetchRoutes()),
+    sendPolyline: polyline => dispatch(sendPolyline(polyline))
 })
 
 export default connect(msp,mdp)(routeMap)

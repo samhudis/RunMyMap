@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_ROUTES, RECEIVE_ROUTE  } from '../actions/route_actions';
+import { RECEIVE_ALL_ROUTES, RECEIVE_ROUTE, SEND_POLYLINE  } from '../actions/route_actions';
 import merge from 'lodash/merge';
 
 export default (state={}, action) => {

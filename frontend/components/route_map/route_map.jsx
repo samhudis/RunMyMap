@@ -1,11 +1,11 @@
 import React from 'react';
-import merge from 'lodash/merge';
-import { throwStatement } from '@babel/types';
+import merge from 'lodash/merge'
 import MarkerManager from '../../util/marker_manager'
 import { debug } from 'util';
 
 class RouteMap extends React.Component {
     componentDidMount() {
+        let that = this
         this.props.fetchRoutes()
         let pins = [];
         const mapOptions = {
@@ -15,7 +15,7 @@ class RouteMap extends React.Component {
 
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         const directionsService = new google.maps.DirectionsService();
-        const directionsDisplay = new google.maps.DirectionsRenderer();
+        const directionsDisplay = new google.maps.DirectionsRenderer({draggable: true});
         directionsDisplay.setMap(this.map)
         this.map.addListener('click', function(e) {
             if (pins.length < 1) {
@@ -24,6 +24,7 @@ class RouteMap extends React.Component {
             else if (pins.length < 2) {
                 placeMarkerAndPanTo(e.latLng, this);
                 renderRoute()
+                
             }
             });
 
@@ -38,6 +39,9 @@ class RouteMap extends React.Component {
             directionsService.route(request, function(result, status){
                 if (status == 'OK') {
                     directionsDisplay.setDirections(result);
+                    let polyline = result.routes[0].overview_polyline;
+                    debugger
+                    that.props.sendPolyline(polyline)
                 }
             });
         }
@@ -50,7 +54,6 @@ class RouteMap extends React.Component {
             });
             map.panTo(latLng);
                 }
-            debugger
             if (pins.length === 2) {renderRoute()}
         this.MarkerManager = new MarkerManager(this.map);
         // this.MarkerManager.updateMarkers(this.props.routes)
