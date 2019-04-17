@@ -52,17 +52,19 @@ class RouteCreate extends React.Component {
                 {/* {this.renderErrors()} */}
                 <div className="routes-create-form">
                     <br/>
-                    <label>Name:
+                    {/* <label>Name: */}
                         <input type="text"
+                            placeholder="Name this map"
                             value={this.state.name}
                             onChange={this.update('name')}
                             className='routes-input'
                         />
-                    </label>
+                    {/* </label> */}
                     <RouteMap />
                     {/* <input type="hidden" value = {this.state.polyline} onChange={this.update('polyline')} /> */}
                     <br/>
-                    <input className="submit-button" type="submit" value={this.props.formType} />
+                    <input className="submit-button route-create-button" type="submit" value={this.props.formType} />
+                    {/* <input className="submit-button route-create-button" type="submit"/> */}
                 </div>
             </form>
         </div>

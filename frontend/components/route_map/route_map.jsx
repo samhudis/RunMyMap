@@ -6,7 +6,7 @@ import { debug } from 'util';
 class RouteMap extends React.Component {
     componentDidMount() {
         let that = this
-        this.props.fetchRoutes()
+        // this.props.fetchRoutes()
         let pins = [];
         let markers = [];
         this.create = true;
