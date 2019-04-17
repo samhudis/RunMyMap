@@ -4,8 +4,9 @@ import merge from 'lodash/merge';
 export default (state={}, action) => {
     switch (action.type) {
         case SEND_POLYLINE:
-            return merge({}, state, {polyline: action.polyline})
+            // return merge({}, state, {polyline: action.polyline})
+            return action.polyline
         default:
-            return state;
+            return "none";
     }
 }

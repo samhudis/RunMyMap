@@ -14,13 +14,16 @@ class RouteShow extends React.Component {
     }
 
     render() {
-        const route = this.props.route || {id: ""}
+        const route = this.props.route || {id: ""};
         return(
             <div className="route-show">
                 { route.name }
                 {/* <br />
                 { route.polyline } */}
-                <RouteMap />
+                {/* <RouteMap preset_polyline={this.props.route.polyline}/> */}
+                <RouteMap preset_polyline={route.polyline} />
+                {/* <RouteMap /> */}
+                {/* { route.polyline } */}
             </div>
         )
     }

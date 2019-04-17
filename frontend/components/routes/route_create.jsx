@@ -7,12 +7,19 @@ class RouteCreate extends React.Component {
         super(props);
         this.state = {
         name: '',
-        polyline: 'example',
+        polyline: props.polyline,
         user_id: props.user_id
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.componentDidUpdate = this.componentDidUpdate.bind(this);
 
     }
+
+    componentDidUpdate(prevProps){
+        if (this.props.polyline !== prevProps.polyline) {
+            this.setState({polyline: this.props.polyline});}
+    }
+
 
     update(field) {
         return e => this.setState({
@@ -22,8 +29,8 @@ class RouteCreate extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const user = merge({}, this.state);
-        this.props.processForm(user, this.props);
+        const route = merge({}, this.state);
+        this.props.processForm(route, this.props);
     }
 
     // renderErrors() {
@@ -53,7 +60,7 @@ class RouteCreate extends React.Component {
                         />
                     </label>
                     <RouteMap />
-                    <input type="hidden" value = {this.state.polyline} onChange={this.update('polyline')} />
+                    {/* <input type="hidden" value = {this.state.polyline} onChange={this.update('polyline')} /> */}
                     <br/>
                     <input className="submit-button" type="submit" value={this.props.formType} />
                 </div>

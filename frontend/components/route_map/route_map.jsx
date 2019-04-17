@@ -14,6 +14,7 @@ class RouteMap extends React.Component {
         };
 
         this.map = new google.maps.Map(this.mapNode, mapOptions);
+        
         const directionsService = new google.maps.DirectionsService();
         const directionsDisplay = new google.maps.DirectionsRenderer({draggable: true});
         directionsDisplay.setMap(this.map)
@@ -40,7 +41,6 @@ class RouteMap extends React.Component {
                 if (status == 'OK') {
                     directionsDisplay.setDirections(result);
                     let polyline = result.routes[0].overview_polyline;
-                    debugger
                     that.props.sendPolyline(polyline)
                 }
             });
@@ -60,7 +60,15 @@ class RouteMap extends React.Component {
     }
 
     componentDidUpdate() {
-        console.log("updated!")
+        let that = this
+        function renderPolyline(preset_polyline) {
+            let path = google.maps.geometry.encoding.decodePath(preset_polyline)
+            let polyline = new google.maps.Polyline({path: path})
+            polyline.setMap(that.map)
+        }
+        if (this.props.preset_polyline) {
+        renderPolyline(this.props.preset_polyline)
+        }
         // this.props.fetchRoutes()
         // this.MarkerManager.updateMarkers(this.props.routes)
     }
