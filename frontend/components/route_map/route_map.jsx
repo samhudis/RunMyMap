@@ -8,6 +8,8 @@ class RouteMap extends React.Component {
         let that = this
         this.props.fetchRoutes()
         let pins = [];
+        let markers = [];
+        this.create = true;
         const mapOptions = {
             center: {lat: 40.8, lng: -74},
             zoom: 10
@@ -19,6 +21,7 @@ class RouteMap extends React.Component {
         const directionsDisplay = new google.maps.DirectionsRenderer({draggable: true});
         directionsDisplay.setMap(this.map)
         this.map.addListener('click', function(e) {
+            if (that.create === true) {
             if (pins.length < 1) {
                 placeMarkerAndPanTo(e.latLng, this);
                 }
@@ -27,7 +30,7 @@ class RouteMap extends React.Component {
                 renderRoute()
                 
             }
-            });
+            }});
 
         function renderRoute() {
             const start = pins[0];
@@ -41,6 +44,8 @@ class RouteMap extends React.Component {
                 if (status == 'OK') {
                     directionsDisplay.setDirections(result);
                     let polyline = result.routes[0].overview_polyline;
+                    markers[0].setMap(null);
+                    markers[1].setMap(null);
                     that.props.sendPolyline(polyline)
                 }
             });
@@ -52,6 +57,7 @@ class RouteMap extends React.Component {
                 position: latLng,
                 map: map
             });
+            markers.push(marker)
             map.panTo(latLng);
                 }
             if (pins.length === 2) {renderRoute()}
@@ -65,9 +71,15 @@ class RouteMap extends React.Component {
             let path = google.maps.geometry.encoding.decodePath(preset_polyline)
             let polyline = new google.maps.Polyline({path: path})
             polyline.setMap(that.map)
+            let bounds = new google.maps.LatLngBounds();
+            for (let i=0; i < polyline.getPath().getLength(); i++) {
+                bounds.extend(polyline.getPath().getAt(i));
+            }
+            that.map.fitBounds(bounds);
         }
         if (this.props.preset_polyline) {
-        renderPolyline(this.props.preset_polyline)
+            that.create = false;
+            renderPolyline(this.props.preset_polyline)
         }
         // this.props.fetchRoutes()
         // this.MarkerManager.updateMarkers(this.props.routes)
