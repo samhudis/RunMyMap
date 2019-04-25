@@ -318,8 +318,9 @@ footer {
      margin-top: 2em;
  }
 
- .all-routes{
-     height: 1px
+ .all-routes > ul{
+     height: 1px;
+     list-style: none;
  }
 
  .route-create-button{
