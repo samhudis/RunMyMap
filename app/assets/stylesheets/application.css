@@ -177,9 +177,9 @@ footer {
  }
 
  .auth-form-box {
-     height: 100px;
      display: flex;
-     justify-content: right
+     justify-content: right;
+     min-height: 40px
  }
 
  .greyBackground {
@@ -336,4 +336,12 @@ footer {
 
  .route-create-button:hover{
     background: #e56e06
+ }
+
+ .demo-submit-button {
+     background: blue
+ }
+
+ .demo-submit-button:hover {
+     background: darkblue
  }
