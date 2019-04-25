@@ -324,7 +324,14 @@ footer {
  }
 
  .route-create-button{
-  background: #ff8714   
+  background: #ff8714;
+  max-width: 300px;
+  width: 100%;
+  align-self: center;
+ }
+
+ .routes-input {
+     max-width: 300px
  }
 
  .route-create-button:hover{

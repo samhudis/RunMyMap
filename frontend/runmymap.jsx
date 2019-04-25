@@ -22,15 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   //TESTING ONLY//
-  window.fetchRoutes = fetchRoutes;
-  window.fetchRoute = fetchRoute;
-  window.createRoute = createRoute;
-  window.store = store;
-  window.getState = store.getState;
-  window.login = login;
-  window.logout = logout;
-  window.signup = signup;
-  window.create
+  // window.fetchRoutes = fetchRoutes;
+  // window.fetchRoute = fetchRoute;
+  // window.createRoute = createRoute;
+  // window.store = store;
+  // window.getState = store.getState;
+  // window.login = login;
+  // window.logout = logout;
+  // window.signup = signup;
+  // window.create
   //TESTING ONLY//
   const root = document.getElementById('root');
   
